@@ -1,0 +1,18 @@
+<div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Thêm công việc mới" aria-label="Recipient's username"
+        aria-describedby="button-addon2" [(ngModel)]="tudo.name">
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="addTudo()">Thêm</button>
+    </div>
+</div>
+
+<ul class="list-group" *ngFor="let item of tudoList; let i = index">
+    <li class="list-group-item d-flex justify-content-between align-items-center" [ngClass]="{Active: item.status }">
+        <input type="checkbox" name="" id="" [checked]="item.status" (change)="status(i)">
+        {{item.name}}
+        <span>
+            <a name="" id="" class="btn btn-primary" href="#" role="button">Sửa</a>
+            <a name="" id="" class="btn btn-primary" href="#" role="button" (click)="remove(i)">Xóa</a>
+        </span>
+    </li>
+</ul>
